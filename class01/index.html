@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            font-size: large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-right: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+<h1 style="text-align: center;">Lab01 on Gits</h1>
+
+    </header>
+    <main>
+        <section>
+            <div id="game" style="background-color: #333;max-width: 25; padding-top: 5px;
+            padding-bottom: 5px;">
+                
+            
+            <ul style="background-color: wheat; margin: auto;margin-left: 753px;max-width: 19%; border: goldenrod solid 3px;">
+                <p id="Username" > Hello </p>
+                
+                <p style="color: #872f87;background-color:#daa570;">Here is a reminder of your answers and reward:</p>
+               
+                <li><p style="color:rgba(29, 58, 206, 0.2); background-color:indianred;" id="Animal">Favorite Animal: </p></li>
+                
+                <li><p style="color: #ff1aff;background-color:#fff0f5;"  id="Color">Favorite Color:</p></li>
+               
+                <li><p id="Number" style="color:#aa69; background-color:#fff0f5 ;"> Favorite Number:</p></li>
+               
+                <li><p id="promo" style="color: tomato; background-color: #d3d3d3;">Your Special Promocode is</p></li>
+            </ul>
+        </div>
+            </section> 
+
+                <p id="here"></p>
+    </main>
+    <footer> &copy; Manar Abdelkarim 2021</footer>
+
+    <script>
+
+let GameResult = "";
+let UserName = "";  
+let count = 1;
+let FavNumber;
+let FavAnimal = "";
+let FavColor = "";
+        function Game(){
+   debugger;
+  alert("Hello, Do you want to play a game ? ");
+  alert("if you can guess the right answers you will get a promocode :D , every correct answer will give you 10% discount! are you ready? ");
+  
+  while (UserName === "" || UserName == null ) {
+     UserName = prompt ("this question is a gift for you :),  what is your name ?");
+  }
+  console.log("The user name:",UserName);
+   FavNumber =  prompt ("from 5 to 10 can you guess my favorite number  ?");
+   console.log("The Favorite Number:",FavNumber);
+   FavAnimal =  prompt ("Do you love animals ? I do (: what is my favorite animal?");
+   console.log("The Favorite Animal:",FavAnimal);
+   FavColor = prompt("The last question .. What is my favorite Color ? hint :it is ether red or blue ");
+   console.log("The Favorite Color:",FavColor);
+
+  if (FavNumber == 9  || FavNumber.toUpperCase() == "NINE") {
+    count ++;
+  }
+  if (FavAnimal.toUpperCase() == "CAT") {
+  count ++;
+  }
+  if (FavColor.toUpperCase() == "BLUE") {
+  count ++;
+  }
+  alert("Good job "+ UserName + " your answers are \n 1- favorite number :"+ FavNumber + " \n 2- favorite Animal: "+ FavAnimal + "\n 3-Favorite color: " 
+  + FavColor );
+  
+  alert("Congrats , you got "+ count + " out of 4 .. your promocode is winner"+ count*10) ;
+  
+      GameResult =  ("winner"+ count*10).toUpperCase();
+  }
+   
+  function ResultsReminder(){
+  
+    document.getElementById("Username").innerHTML = "what is your name ? "+ UserName;
+    document.getElementById("Animal").innerHTML="what is my favorite animal? "+ FavAnimal;
+    document.getElementById("Color").innerHTML=" What is my favorite Color ? "+ FavColor;
+    document.getElementById("Number").innerHTML=" can you guess my favorite number ? "+ FavNumber;
+    document.getElementById("promo").innerHTML="Your Special Promocode is: "+ GameResult;
+    
+    document.getElementById("game").style.display = "block";
+    
+  }
+  
+  Game();
+  ResultsReminder();
+        
+    </script>
+</body>
+</html>
